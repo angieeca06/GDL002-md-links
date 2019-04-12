@@ -36,7 +36,7 @@ El usuario es cualquier otro programador que necesite verificar sus _links_ por 
 La librería esta implementada en JavaScript para ser ejecutada con
 Node.js.
 
-### Archivos del proyecto
+<!-- ### Archivos del proyecto
 
 - `README.md` con descripción del módulo, instrucciones de instalación/uso,
   documentación del API y ejemplos. Todo lo relevante para que cualquier
@@ -49,4 +49,4 @@ Node.js.
 - `.gitignore` para ignorar `node_modules` u otras carpetas que no deban
   incluirse en control de versiones (`git`).
 - `test/md-links.spec.js` debe contener los tests unitarios para la función
-  `mdLinks()`. Tu implementación debe pasar estos test.
+  `mdLinks()`. Tu implementación debe pasar estos test. -->
