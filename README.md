@@ -1,4 +1,5 @@
 # Markdown Links
+![Cadenas](https://user-images.githubusercontent.com/110297/42118443-b7a5f1f0-7bc8-11e8-96ad-9cc5593715a6.jpg)
 
 ## Introducción
 
@@ -10,8 +11,6 @@ encontrar varios archivos en ese formato en cualquier tipo de repositorio.
 Estos archivos `Markdown` normalmente contienen _links_ que
 muchas veces están rotos o ya no son válidos y eso perjudica mucho el valor de
 la información que se quiere compartir.
-
-![md-links](https://user-images.githubusercontent.com/110297/42118443-b7a5f1f0-7bc8-11e8-96ad-9cc5593715a6.jpg)
 
 ## Objetivos del proyecto 
 
@@ -25,7 +24,11 @@ Este proyecto se hizo con la finalidad de poder verificar los _links_ que se enc
 
 ## Diagrama de flujo general 
 
+![Diagrama-de-flujo](https://drive.google.com/uc?export=view&id=18OOfbQs83IBP_bCaDhXFLbmQk0cEopd1)
+
 ![Diagrama-de-flujo](https://drive.google.com/file/d/18OOfbQs83IBP_bCaDhXFLbmQk0cEopd1/view?usp=sharing)
+
+
 
 ## Definición del usuario
 
