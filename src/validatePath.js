@@ -1,6 +1,6 @@
 let fs = require("fs");
 let path = require("path");
-
+console.log("Inicio");
 const validatePathExistWithExtensionMd = (Myroute) =>{
   const extension = path.extname(Myroute);
   if(extension === ".md"){
@@ -20,7 +20,11 @@ const transformRelativePath = (Myroute) =>{
 
 const checkIfTheFileExistInADirectiry = (Myroute) => {
   fs.access(Myroute, fs.constants.F_OK, err =>{
-    console.log(err);
+    if(err){
+      console.log(err);
+    }else{
+      console.log("El archivo existe en el directorio");
+    }
   });
 };
 
@@ -35,7 +39,7 @@ function readFileMd(Myroute) {
       });
   });
 };
-
+console.log("Final");
 module.exports ={
   validatePathExistWithExtensionMd: validatePathExistWithExtensionMd,
   validatePathAbsolute: validatePathAbsolute,
