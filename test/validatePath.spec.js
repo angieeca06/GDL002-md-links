@@ -31,6 +31,7 @@ describe("validatePathAbsolute", () => {
   it("It isn't a absolute path", () =>{
     expect(mdLinks.validatePathAbsolute(pathNotAbsolute)).toEqual(false);
   });
+});
 
 describe("transformRelativePath", () => {
   it("transformRelativePath is a function", () => {
@@ -42,4 +43,18 @@ describe("transformRelativePath", () => {
     .toEqual("C:\\Users\\PERSONAL\\Laboratoria\\GDL002-md-links\\kitten.png");
   });
 });
+
+describe("checkIfTheFileExistInADirectiry", () =>{
+  it("Check if the file exist in a directory", () => {
+    expect(mdLinks.checkIfTheFileExistInADirectiry("prueba.md"))
+    .toBe("El archivo existe en el directorio");
+  });
+});
+
+describe("Should read a file", () =>{
+  test ("should read a file",()=>{
+    mdLinks.readFileMd("prueba.md").then((result) => {
+      expect(result).toBe("Test correcto");
+    });
+  });
 });

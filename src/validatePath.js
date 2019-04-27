@@ -20,11 +20,10 @@ const transformRelativePath = (Myroute) =>{
 
 const checkIfTheFileExistInADirectiry = (Myroute) => {
   fs.access(Myroute, fs.constants.F_OK, err =>{
-    if(err){
-      console.log(err);
-    }else{
-      console.log("El archivo existe en el directorio");
-    }
+    if (!err) {
+      console.error('myfile already exists');
+      return;
+    };
   });
 };
 
