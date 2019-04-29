@@ -1,6 +1,10 @@
 let fs = require("fs");
 let path = require("path");
+
+const directoryFileList = [];
+
 console.log("Inicio");
+
 const validatePathExistWithExtensionMd = (Myroute) =>{
   const extension = path.extname(Myroute);
   if(extension === ".md"){
@@ -21,33 +25,44 @@ const transformRelativePath = (Myroute) =>{
 const checkIfTheFileExistInADirectiry = (Myroute) => {
   return new Promise((resolve, reject) => {
     fs.access(Myroute,"utf-8", (err, data) => {
-      if(err){
-        reject(err);
-      }else{
-        resolve(data);
-      }
+      return err ? reject(err) : resolve(data);
     });
 });
 };
 
-function readFileMd(Myroute) {
+const readFileMd = (Myroute) => {
   return new Promise((resolve, reject) => {
       fs.readFile(Myroute, "utf-8", (err, data) => {
-          if (err) {
-              reject(err);
-          } else {
-              resolve(data);
-          }
+        return err ? reject(err) : resolve(data);
       });
   });
 };
 
+const readDirectory = (Myroute) => {
+  return new Promise((resolve, reject) => {
+    fs.readdir(Myroute, 'utf8', (err, files) => {
+      return err ? reject(err) : resolve(files);
+    });
+  });
+};
+
+const filterDirectoryMarkdownFiles = (files) => {
+  files.forEach((element) => {
+    if (path.extname(element) === '.md') {
+      directoryFileList.push(element);
+    }
+    return directoryFileList;
+  });
+};
 
 console.log("Final");
+
 module.exports ={
   validatePathExistWithExtensionMd: validatePathExistWithExtensionMd,
   validatePathAbsolute: validatePathAbsolute,
   transformRelativePath: transformRelativePath,
   checkIfTheFileExistInADirectiry: checkIfTheFileExistInADirectiry,
-  readFileMd: readFileMd
+  readFileMd: readFileMd,
+  readDirectory: readDirectory,
+  filterDirectoryMarkdownFiles: filterDirectoryMarkdownFiles
 };

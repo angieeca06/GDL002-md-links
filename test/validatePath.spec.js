@@ -53,7 +53,7 @@ describe("transformRelativePath", () => {
 describe("checkIfTheFileExistInADirectiry", () =>{
   test("Check if the file exist in a directory", () => {
     mdLinks.checkIfTheFileExistInADirectiry("README.md").then((result) => {
-      expect(result).toBe("exists");
+      expect(result).toEqual("exists");
     });
   });
 });
@@ -63,5 +63,20 @@ describe("Should read a file", () =>{
     mdLinks.readFileMd("pruebaTest.md").then((result) => {
       expect(result).toBe("Test correcto");
     });
+  });
+});
+
+describe("Should read a directory", () =>{
+  test ("should read a directory",() => {
+    mdLinks.readDirectory("./").then((result) => {
+      expect(result).toEqual([".editorconfig", ".eslintrc", ".git", ".gitignore", ".prettierrc", "README.md", "bin", "coverage", "node_modules", "package-lock.json", "package.json", "pruebaTest.md", "src", "test"]);
+    });
+  });
+});
+
+describe("filterDirectoryMarkdownFiles", () => {
+  it("filter .md files ", () => {
+    expect(mdLinks.filterDirectoryMarkdownFiles([".editorconfig", ".eslintrc", ".git", ".gitignore", ".prettierrc", "README.md", "bin", "coverage", "node_modules", "package-lock.json", "package.json", "pruebaTest.md", "src", "test"]))
+    .toEqual(["README.md","pruebaTest.md"]);
   });
 });
