@@ -4,8 +4,14 @@ const pathNotAbsolute = ".";
 const pathMd = "ReadMe.md";
 const pathNotMd = "validate.js";
 
+describe("module.exports", () => {
+  it("module exports is a object", () => {
+    expect(typeof (mdLinks.module)).toBe("object");
+  });
+});
+
 describe("validatePathExistWithExtensionMd" , () => {
-  it("vlaidatePathExist is a function", () => {
+  it("validatePathExist is a function", () => {
     expect(typeof (mdLinks.validatePathExistWithExtensionMd)).toBe("function");
   });
 
@@ -45,14 +51,15 @@ describe("transformRelativePath", () => {
 });
 
 describe("checkIfTheFileExistInADirectiry", () =>{
-  it("Check if the file exist in a directory", () => {
-    expect(mdLinks.checkIfTheFileExistInADirectiry("prueba.md"))
-    .toBe("El archivo existe en el directorio");
+  test("Check if the file exist in a directory", () => {
+    mdLinks.checkIfTheFileExistInADirectiry("README.md").then((result) => {
+      expect(result).toBe("exists");
+    });
   });
 });
 
 describe("Should read a file", () =>{
-  test ("should read a file",()=>{
+  test ("should read a file",() => {
     mdLinks.readFileMd("prueba.md").then((result) => {
       expect(result).toBe("Test correcto");
     });

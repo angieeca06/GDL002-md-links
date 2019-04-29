@@ -19,12 +19,15 @@ const transformRelativePath = (Myroute) =>{
 };
 
 const checkIfTheFileExistInADirectiry = (Myroute) => {
-  fs.access(Myroute, fs.constants.F_OK, err =>{
-    if (!err) {
-      console.error('myfile already exists');
-      return;
-    };
-  });
+  return new Promise((resolve, reject) => {
+    fs.access(Myroute,"utf-8", (err, data) => {
+      if(err){
+        reject(err);
+      }else{
+        resolve(data);
+      }
+    });
+});
 };
 
 function readFileMd(Myroute) {
