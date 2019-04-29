@@ -2,12 +2,10 @@
   "name": "md-links",
   "version": "0.1.0",
   "description": "Read and verificade all the links in your directory",
-
   "scripts": {
     "eslint": "eslint --ext .js src/ test/",
     "pretest": "npm run eslint",
-    "test": "jest --coverage",
-    "install": "node validatePath.js"
+    "test": "jest --coverage"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
@@ -15,5 +13,8 @@
   },
   "dependencies": {
     "eslint-plugin-jest": "^22.4.1"
+  },
+  "bin": {
+    "md-links": "./bin/cli.js"
   }
 }
