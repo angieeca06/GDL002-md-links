@@ -52,7 +52,7 @@ describe("transformRelativePath", () => {
 
 describe("checkIfTheFileExistInADirectiry", () =>{
   test("Check if the file exist in a directory", () => {
-    mdLinks.checkIfTheFileExistInADirectiry("README.md").then((result) => {
+    mdLinks.checkIfTheFileExistInADirectiry("pruebaTest.md").then((result) => {
       expect(result).toEqual("exists");
     });
   });

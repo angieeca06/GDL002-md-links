@@ -13,6 +13,7 @@ const validatePathExistWithExtensionMd = (Myroute) =>{
     return false;
   };
 };
+// console.log(validatePathExistWithExtensionMd("README.md"));
 
 const validatePathAbsolute = (Myroute) =>{
   return path.isAbsolute(Myroute);
@@ -24,11 +25,14 @@ const transformRelativePath = (Myroute) =>{
 
 const checkIfTheFileExistInADirectiry = (Myroute) => {
   return new Promise((resolve, reject) => {
-    fs.access(Myroute,"utf-8", (err, data) => {
-      return err ? reject(err) : resolve(data);
+    fs.access(Myroute,"utf-8", (err) => {
+      return err ? reject(err) : resolve('exists');
     });
 });
 };
+// checkIfTheFileExistInADirectiry("src/pruebaTest.md")
+// .then(result => console.log(result))
+// .catch(error => console.log('error', error));
 
 const readFileMd = (Myroute) => {
   return new Promise((resolve, reject) => {
