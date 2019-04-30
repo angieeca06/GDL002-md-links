@@ -67,16 +67,17 @@ describe("Should read a file", () =>{
 });
 
 describe("Should read a directory", () =>{
-  test ("should read a directory",() => {
-    mdLinks.readDirectory("./").then((result) => {
-      expect(result).toEqual([".editorconfig", ".eslintrc", ".git", ".gitignore", ".prettierrc", "README.md", "bin", "coverage", "node_modules", "package-lock.json", "package.json", "pruebaTest.md", "src", "test"]);
+  test("should read a directory", done => {
+    mdLinks.readDirectory("./src").then((result) => {
+      expect(result).toBe(true);
+      done();
+    });
+  });
+
+  test("Should return a error", () => {
+    mdLinks.readDirectory("./foo").then((result)=> {
+      expect(result).contains("ENOENT");
     });
   });
 });
 
-describe("filterDirectoryMarkdownFiles", () => {
-  it("filter .md files ", () => {
-    expect(mdLinks.filterDirectoryMarkdownFiles([".editorconfig", ".eslintrc", ".git", ".gitignore", ".prettierrc", "README.md", "bin", "coverage", "node_modules", "package-lock.json", "package.json", "pruebaTest.md", "src", "test"]))
-    .toEqual(["README.md","pruebaTest.md"]);
-  });
-});

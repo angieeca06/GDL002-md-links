@@ -30,9 +30,6 @@ const checkIfTheFileExistInADirectiry = (Myroute) => {
     });
 });
 };
-// checkIfTheFileExistInADirectiry("src/pruebaTest.md")
-// .then(result => console.log(result))
-// .catch(error => console.log('error', error));
 
 const readFileMd = (Myroute) => {
   return new Promise((resolve, reject) => {
@@ -44,20 +41,24 @@ const readFileMd = (Myroute) => {
 
 const readDirectory = (Myroute) => {
   return new Promise((resolve, reject) => {
-    fs.readdir(Myroute, 'utf8', (err, files) => {
-      return err ? reject(err) : resolve(files);
+    fs.readdir(Myroute, (err, files) => {
+      if(err){
+        reject(err);
+        return;
+      }
+      resolve(true);
     });
   });
 };
 
-const filterDirectoryMarkdownFiles = (files) => {
-  files.forEach((element) => {
-    if (path.extname(element) === '.md') {
-      directoryFileList.push(element);
-    }
-    return directoryFileList;
-  });
-};
+// const filterDirectoryMarkdownFiles = (files) => {
+//   files.forEach((element) => {
+//     if (path.extname(element) === '.md') {
+//       directoryFileList.push(element);
+//     }
+//     return directoryFileList;
+//   });
+// };
 
 console.log("Final");
 
@@ -67,6 +68,5 @@ module.exports ={
   transformRelativePath: transformRelativePath,
   checkIfTheFileExistInADirectiry: checkIfTheFileExistInADirectiry,
   readFileMd: readFileMd,
-  readDirectory: readDirectory,
-  filterDirectoryMarkdownFiles: filterDirectoryMarkdownFiles
+  readDirectory: readDirectory
 };
