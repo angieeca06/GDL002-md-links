@@ -1,5 +1,6 @@
 let fs = require("fs");
 let path = require("path");
+let url = require("url");
 
 console.log("Inicio");
 
@@ -13,6 +14,7 @@ module.exports = (Myroute, options) =>{
         // console.log(data.toString());
       });
     });
+
   };
 
 // const validatePathExistWithExtensionMd = (Myroute) =>{

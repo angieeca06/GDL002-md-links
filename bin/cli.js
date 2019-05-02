@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-const Myroute = process.argv[1];
+const Myroute = process.argv[2];
 const mdLinks = require('../src/validatePath.js');
 const resultReadFile  = mdLinks(Myroute, null);
 
-console.log(resultReadFile);
+// console.log(Myroute);
 
 resultReadFile
     .then(
@@ -36,6 +36,7 @@ const extractData = (Myroute) => {
     obj.link = groups[2];
     return obj;
 };
+
 
 // console.log(extractData(Myroute));
 // console.log(`Hello ${Myroute}`);
