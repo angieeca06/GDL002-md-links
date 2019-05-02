@@ -1,9 +1,19 @@
 let fs = require("fs");
 let path = require("path");
 
-// const directoryFileList = [];
-
 console.log("Inicio");
+
+module.exports = (Myroute, options) =>{
+    return new Promise((resolve, reject) => {
+      fs.readFile(Myroute, function(err, data){
+        if (err){
+          return reject(err);
+        }
+        resolve(data.toString());
+        // console.log(data.toString());
+      });
+    });
+  };
 
 // const validatePathExistWithExtensionMd = (Myroute) =>{
 //   const extension = path.extname(Myroute);
@@ -57,18 +67,7 @@ console.log("Inicio");
 
 // console.log("Final");
 
-module.exports = (Myroute, options) =>{
-  // const readFileMd = (Myroute, options) => {
-    return new Promise((resolve, reject) => {
-      fs.readFile(Myroute, function(err, data){
-        if (err){
-          return reject(err);
-        }
-        resolve(data.toString());
-        // console.log(data.toString());
-      });
-    });
-  };
+
   // validatePathExistWithExtensionMd(Myroute),
   // validatePathAbsolute(Myroute),
   // transformRelativePath(Myroute),

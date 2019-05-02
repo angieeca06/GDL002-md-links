@@ -1,4 +1,3 @@
-
 {
   "name": "md-links",
   "version": "0.1.0",
@@ -17,5 +16,19 @@
   },
   "bin": {
     "md-links": "./bin/cli.js"
-  }
+  },
+  "main": "cli.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angieeca06/GDL002-md-links.git"
+  },
+  "author": "Angelica Elizabeth Caballero Alvarez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/angieeca06/GDL002-md-links/issues"
+  },
+  "homepage": "https://github.com/angieeca06/GDL002-md-links#readme"
 }
