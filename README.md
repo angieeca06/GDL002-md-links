@@ -24,9 +24,7 @@ Este proyecto se hizo con la finalidad de poder verificar los _links_ que se enc
 
 ## Diagrama de flujo general 
 
-![Diagrama-de-flujo](https://drive.google.com/uc?export=view&id=18OOfbQs83IBP_bCaDhXFLbmQk0cEopd1)
-
-![Diagrama-de-flujo](https://drive.google.com/file/d/18OOfbQs83IBP_bCaDhXFLbmQk0cEopd1/view?usp=sharing)
+![Diagrama-de-flujo](./img/Diagrama_de_flujo.png)
 
 
 
@@ -39,6 +37,20 @@ El usuario es cualquier otro programador que necesite verificar sus _links_ por 
 La librería esta implementada en JavaScript para ser ejecutada con
 Node.js.
 
+## Instalacion
+Deberás utilizar tu CLI o terminal
+
+1. Instala Node.js
+
+2. `npm i @angie061099/md-links` 
+
+3. Ejecuta `mdLinks` si falla `@angie061099/md-links`
+
+## Instrucciones de uso
+
+1. Ejecuta `mdLinks`
+
+2. md-links <ruta-archivo-directorio>
 <!-- ### Archivos del proyecto
 
 - `README.md` con descripción del módulo, instrucciones de instalación/uso,
