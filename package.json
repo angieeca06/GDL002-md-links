@@ -1,6 +1,6 @@
 {
   "name": "@angie061099/md-links",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Read and verificade all the links in your directory",
   "scripts": {
     "eslint": "eslint --ext .js src/ test/",
