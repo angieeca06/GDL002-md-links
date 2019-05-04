@@ -1,6 +1,4 @@
 let fs = require("fs");
-let path = require("path");
-let url = require("url");
 const fetch = require("node-fetch");
 const chalk = require("chalk");
 const markdownLinkExtractor = require("markdown-link-extractor");
