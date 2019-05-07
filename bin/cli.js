@@ -3,5 +3,6 @@
 const Myroute = process.argv[2];
 const mdLinks = require('../src/validatePath.js');
 
+mdLinks.validatePathAbsolute(Myroute);
 mdLinks.checkIfTheFileExistInADirectory(Myroute);
 mdLinks.readFileMd(Myroute);
